@@ -26,8 +26,8 @@ const wheelItems = [
 <script>
   import Swiper from "swiper";
   import "swiper/css";
-  const container = document.querySelector(".business__wheel");
-  var swiper = new Swiper(".swiper", {
+  const container = document.querySelector(".business__wheel") as HTMLElement;
+  const swiper = new Swiper(".business__swiper", {
     loop: true,
     slidesPerView: 2.5,
     slidesPerGroup: 1,
@@ -56,13 +56,13 @@ const wheelItems = [
 <div class="business__container">
   <div class="business">
     <span class="business__tagline"> Our 4 business units work with</span>
-    <div class="swiper">
+    <div class="swiper business__swiper">
       <div class="business__wheel swiper-wrapper">
         {
           wheelItems.map((item, index) => (
             <div
               data-index={index}
-              class:list={["business__wheel-item", "swiper-slide"]}
+              class:list={["business__wheel-item", "swiper-slide", "business__swiper-slide"]}
             >
               {item}<span class="business__dot">.</span>
             </div>
@@ -94,19 +94,19 @@ const wheelItems = [
     font-size: 3rem;
     line-height: 100%;
   }
-  .swiper {
+  .business__swiper {
     height: 240px;
     margin: 0;
     pointer-events: none;
   }
-  .swiper-slide {
+  .business__swiper-slide {
     color: #eaeaea;
     transition: color 300ms;
   }
-  .swiper-slide-active {
+  .business__swiper-slide.swiper-slide-active {
     color: #f3260a;
   }
-  .swiper-slide-active + .swiper-slide,
+  .business__swiper-slide.swiper-slide-active + .swiper-slide,
   .previous-slide {
     color: #d3d3d3;
   }
@@ -128,13 +128,11 @@ const wheelItems = [
       margin-top: 80px;
       margin-bottom: 120px;
     }
-    .swiper{
+    .business__swiper{
       width: 100%;
-    }
-    .swiper{
       height: 20px;
     }
-    .business__tagline, .swiper-slide{
+    .business__tagline, .business__swiper-slide{
       font-size: 1.25rem;
     }
     .business__dot{
