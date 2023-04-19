@@ -21,42 +21,54 @@ const wheelItems = [
   "SMEs",
   "technological partners",
 ];
-
 ---
 
 <script>
-    import Swiper from 'swiper';
-     import 'swiper/css';
-     const container = document.querySelector('.business__wheel')
+  import Swiper from "swiper";
+  import "swiper/css";
+  const container = document.querySelector(".business__wheel");
   var swiper = new Swiper(".swiper", {
-      direction: "vertical",
-      loop:true,
-      slidesPerView:5,
-      slidesPerGroup:1,
-      centeredSlides:true,
-      initialSlide:8
-    });
-    setInterval(()=>{
-      swiper.slideNext()
-      container.children[swiper.activeIndex - 1].classList.add("previous-slide")
-      container.children[swiper.activeIndex - 2].classList.remove("previous-slide")
-    }, 2000)
+    loop: true,
+    slidesPerView: 2.5,
+    slidesPerGroup: 1,
+    initialSlide: 8,
+    spaceBetween:10,
+    breakpoints: {
+      809: {
+        direction: "vertical",
+        loop: true,
+        slidesPerView: 5,
+        slidesPerGroup: 1,
+        centeredSlides: true,
+        initialSlide: 8,
+      },
+    },
+  });
+  setInterval(() => {
+    swiper.slideNext();
+    container.children[swiper.activeIndex - 1].classList.add("previous-slide");
+    container.children[swiper.activeIndex - 2].classList.remove(
+      "previous-slide"
+    );
+  }, 2000);
 </script>
 
-<div class="business">
-  <span class="business__tagline"> Our 4 business units work with</span>
-  <div class="swiper">
-    <div class="business__wheel swiper-wrapper">
-      {
-        wheelItems.map((item, index) => (
-          <div
-            data-index={index}
-            class:list={["business__wheel-item" ,"swiper-slide"]}
-          >
-            {item}.
-          </div>
-        ))
-      }
+<div class="business__container">
+  <div class="business">
+    <span class="business__tagline"> Our 4 business units work with</span>
+    <div class="swiper">
+      <div class="business__wheel swiper-wrapper">
+        {
+          wheelItems.map((item, index) => (
+            <div
+              data-index={index}
+              class:list={["business__wheel-item", "swiper-slide"]}
+            >
+              {item}<span class="business__dot">.</span>
+            </div>
+          ))
+        }
+      </div>
     </div>
   </div>
 </div>
@@ -81,21 +93,52 @@ const wheelItems = [
   .business__wheel-item {
     font-size: 3rem;
     line-height: 100%;
-    color:;
   }
-  .swiper{
+  .swiper {
     height: 240px;
     margin: 0;
     pointer-events: none;
   }
-  .swiper-slide{
-    color:#EAEAEA;
+  .swiper-slide {
+    color: #eaeaea;
     transition: color 300ms;
   }
-  .swiper-slide-active{
-    color: #F3260A;
+  .swiper-slide-active {
+    color: #f3260a;
   }
-  .swiper-slide-active + .swiper-slide, .previous-slide{
-    color: #D3D3D3;
+  .swiper-slide-active + .swiper-slide,
+  .previous-slide {
+    color: #d3d3d3;
+  }
+  @media (max-width: 1332px){
+    .business{
+      padding: 2rem 0;
+    }
+    .business__container{
+      padding: 0 2rem;
+    }
+    .business__wheel-item, .business__tagline{
+      font-size: 2rem;
+    }
+  }
+  @media (max-width: 809px) {
+    .business {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 80px;
+      margin-bottom: 120px;
+    }
+    .swiper{
+      width: 100%;
+    }
+    .swiper{
+      height: 20px;
+    }
+    .business__tagline, .swiper-slide{
+      font-size: 1.25rem;
+    }
+    .business__dot{
+      display: none;
+    }
   }
 </style>
