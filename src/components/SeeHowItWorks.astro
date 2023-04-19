@@ -1,0 +1,114 @@
+---
+const cards = [
+  {
+    logo: "",
+    tag: "Gamification",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.",
+    href: "#",
+  },
+  {
+    logo: "",
+    tag: "Custome business applications",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.",
+    href: "#",
+  },
+  {
+    logo: "",
+    tag: "Communication & Marketing",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.",
+    href: "#",
+  },
+  {
+    logo: "",
+    tag: "Data science",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.",
+    href: "#",
+  },
+];
+---
+
+<script>
+  import Swiper from "swiper";
+  import "swiper/css";
+  const swiper = new Swiper(".how__swiper", {
+    slidesPerView: 4,
+  });
+</script>
+
+<section class="how">
+  <div class="how__header">
+    <span class="how__title">See how it works.</span>
+    <p class="how__text">
+      As a full-service partner to ambitious minds, we bridge the gap between
+      the needs and the solutions.<br />
+      We guide promising talent towards mature business opportunities to help you
+      reach your full potential in the digital age.
+    </p>
+  </div>
+  <div class="how__swiper swiper">
+    <div class="how__swiper-wrapper swiper-wrapper">
+      {
+        cards.map((card, index) => (
+          <div data-index={index*120} class="swiper-slide how__swiper-slide">
+            <span>{card.tag}</span>
+            <div>
+              <figure>
+                <img src={card.logo} alt="" />
+              </figure>
+              <p>{card.description}</p>
+              <a href={card.href}>visit website</a>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .how {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  .how__header {
+    display: flex;
+    gap: 80px;
+  }
+  .how__title {
+    font-size: 2rem;
+    line-height: 1.25;
+    flex-shrink: 0;
+  }
+  .how__text {
+    font-size: 1.125rem;
+    line-height: 150%;
+  }
+  .how__swiper {
+    width: 100%;
+    margin-top: 100px;
+  }
+  .how__swiper-slide:nth-child(2){
+    padding-top: 120px
+  }
+  .how__swiper-slide:nth-child(3){
+    padding-top: 240px
+  }
+  .how__swiper-slide:nth-child(4){
+    padding-top: 360px
+  }
+  @media (max-width: 1332px) {
+    .how {
+      padding: 0 2rem;
+    }
+  }
+  @media (max-width: 809px) {
+    .how__header {
+      flex-direction: column;
+      gap: 40px;
+    }
+  }
+</style>
