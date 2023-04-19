@@ -1,0 +1,62 @@
+---
+import Header from "./Header.astro";
+
+---
+<div class="hero">
+  <Header/>
+  <div class="hero__content">
+    <h1 class="hero__title">Accelerating human-centered digital transformation.</h1>
+    <p class="hero__text">
+      As a full-service partner to ambitious minds, we bridge the gap between the needs and the solutions.<br/>
+      We guide promising talent towards mature business opportunities to help you reach your full potential in the digital age.
+    </p>
+  </div>
+</div>
+
+<style>
+  .hero{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 1024px;
+    padding-bottom: 100px;
+    background: lightblue;
+  }
+  .hero__content{
+    max-width: 1300px;
+    margin: 0 auto;
+    width: 100%;
+    border-bottom: 2px solid red;
+    padding-bottom: 56px;
+  }
+  .hero__title{
+    font-weight: 400;
+    font-size: 4.5rem;
+    line-height: 113%;
+    margin-bottom: 3rem;
+  }
+  .hero__text{
+    max-width: 952px;
+    width: 100%;
+    font-size: 1.125rem;
+    line-height: 166%;
+  }
+  @media (max-width: 1332px){
+    .hero{
+      padding: 0 2rem 100px 2rem;
+    }
+  }
+  @media(max-width:809px){
+    .hero{
+      min-height: 744px;
+      padding-bottom: 64px;
+    }
+    .hero__title{
+      font-size: 2rem;
+    }
+    .hero__text{
+      font-size: 1rem;
+    }
+  }
+</style>

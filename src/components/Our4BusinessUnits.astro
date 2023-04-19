@@ -1,0 +1,101 @@
+---
+const wheelItems = [
+  "local talents",
+  "government",
+  "large entreprises",
+  "SMEs",
+  "technological partners",
+  "local talents",
+  "government",
+  "large entreprises",
+  "SMEs",
+  "technological partners",
+  "local talents",
+  "government",
+  "large entreprises",
+  "SMEs",
+  "technological partners",
+  "local talents",
+  "government",
+  "large entreprises",
+  "SMEs",
+  "technological partners",
+];
+
+---
+
+<script>
+    import Swiper from 'swiper';
+     import 'swiper/css';
+     const container = document.querySelector('.business__wheel')
+  var swiper = new Swiper(".swiper", {
+      direction: "vertical",
+      loop:true,
+      slidesPerView:5,
+      slidesPerGroup:1,
+      centeredSlides:true,
+      initialSlide:8
+    });
+    setInterval(()=>{
+      swiper.slideNext()
+      container.children[swiper.activeIndex - 1].classList.add("previous-slide")
+      container.children[swiper.activeIndex - 2].classList.remove("previous-slide")
+    }, 2000)
+</script>
+
+<div class="business">
+  <span class="business__tagline"> Our 4 business units work with</span>
+  <div class="swiper">
+    <div class="business__wheel swiper-wrapper">
+      {
+        wheelItems.map((item, index) => (
+          <div
+            data-index={index}
+            class:list={["business__wheel-item" ,"swiper-slide"]}
+          >
+            {item}.
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>
+
+<style>
+  .business {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #232e36;
+    border-bottom: 1px solid #232e36;
+    max-width: 1300px;
+    margin: 100px auto;
+    padding: 56px 0;
+    gap: 1rem;
+  }
+  .business__tagline {
+    font-size: 3rem;
+    line-height: 114%;
+    color: #232e36;
+    flex-shrink: 0;
+  }
+  .business__wheel-item {
+    font-size: 3rem;
+    line-height: 100%;
+    color:;
+  }
+  .swiper{
+    height: 240px;
+    margin: 0;
+    pointer-events: none;
+  }
+  .swiper-slide{
+    color:#EAEAEA;
+    transition: color 300ms;
+  }
+  .swiper-slide-active{
+    color: #F3260A;
+  }
+  .swiper-slide-active + .swiper-slide, .previous-slide{
+    color: #D3D3D3;
+  }
+</style>

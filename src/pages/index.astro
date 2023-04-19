@@ -1,15 +1,20 @@
 ---
+import DiscoverOurNewestInitiative from "../components/DiscoverOurNewestInitiative.astro";
+import FAQ from "../components/FAQ.astro";
+import Footer from "../components/Footer.astro";
+import Hero from "../components/Hero.astro";
+import Our4BusinessUnits from "../components/Our4BusinessUnits.astro";
+import SeeHowItWorks from "../components/SeeHowItWorks.astro";
+import Main from "../layouts/Main.astro"
+
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Main>
+  <Hero/>
+  <Our4BusinessUnits/>
+  <SeeHowItWorks/>
+  <DiscoverOurNewestInitiative/>
+  <Footer>
+    <FAQ/>
+  </Footer>
+</Main>

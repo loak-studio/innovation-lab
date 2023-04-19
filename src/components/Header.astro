@@ -1,0 +1,53 @@
+---
+
+const links  = [
+  {
+    href:'#about',
+    label:'about'
+  },
+  {
+    href:'#services',
+    label:'services'
+  },
+
+  {
+    href:'#contact',
+    label:'contact'
+  }
+]
+---
+<header class="header">
+  <a class="header__home-link" href="/"> <span> Innovation lab</span></a>
+  <nav>
+    <ul class="nav">
+     {links.map(link=><li class="nav__item"><a class:list={[
+      "nav__link",
+      Astro.url.pathname == link.href ? 'nav__item--active':null
+     ]} href={link.href}>{link.label}</a></li>)}
+    </ul>
+  </nav>
+</header>
+<style>
+
+.header{
+    max-width: 1300px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 80px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .nav{
+    display: flex;
+    gap:1.875rem;
+  }
+  @media(max-width:809px){
+    .header{
+      padding-top: 64px;
+    }
+    .nav{
+      flex-direction: column;
+      gap:18px;
+    }
+  }
+</style>
