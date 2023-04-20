@@ -1,5 +1,5 @@
 ---
-
+import Logo from "../assets/logo.svg"
 const links  = [
   {
     href:'#about',
@@ -17,7 +17,9 @@ const links  = [
 ]
 ---
 <header class="header">
-  <a class="header__home-link" href="/"> <span> Innovation lab</span></a>
+  <a class="header__home-link" href="/">
+  <figure class="header__logo">
+    <img src={Logo} alt=""></figure></a>
   <nav>
     <ul class="nav">
      {links.map(link=><li class="nav__item"><a class:list={[
@@ -40,10 +42,17 @@ const links  = [
   .nav{
     display: flex;
     gap:1.875rem;
+    color:white;
+  }
+  .header__logo{
+    max-width: 200px;
   }
   @media(max-width:809px){
     .header{
       padding-top: 64px;
+    }
+    .header__logo{
+      max-width: 156px;
     }
     .nav{
       flex-direction: column;

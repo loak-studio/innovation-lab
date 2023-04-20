@@ -1,0 +1,125 @@
+---
+const questions = [
+  {
+    question: "What support does Innovation Lab Group provide?",
+    answer: `<p>Innovation Lab Group provides a range of support services, including integration and partnership solutions, with a focus on human-centered and trust-based approaches. We specialize in solving complex issues and offering a general strategic overview to help our clients achieve their goals.</p>`,
+  },
+  {
+    question: "How do you approach a project?",
+    answer: `<p>Our teams provide a global approach that includes active listening, implementation, optimization, technical support, training, regular follow-up, account management, customization, and regular measurement of customer satisfaction. Experience our commitment to providing high-quality products and services by contacting us at hello@innovationlab.group. </p>`,
+  },
+  {
+    question: "What technology partners are you working with?",
+    answer: `<p>We work mainly with Microsoft and Nuance. In the Cronos group, there are many others like RedHat, SAP, Fortinet, Oracle, Odoo... Send us a message and we will put you in touch with the right people. </p>`,
+  },
+  {
+    question: "Do you recruit profiles?",
+    answer: `<p>We are always looking for new talents to join us. Contact us at hello@innovationlab.group. </p>`,
+  },
+];
+---
+
+<section>
+  <div class="faq">
+    <h2 class="faq__title">
+      Frequently <br /> asked questions:
+    </h2>
+    <ul class="faq__list">
+      {
+        questions.map(({ question, answer }) => (
+          <li class="faq__item">
+            <details>
+              <summary class="faq__question">{question}</summary>
+              <div class="faq__answer" set:html={answer} />
+            </details>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+<style>
+  .faq{
+    display: flex;
+    gap:77px;
+    max-width: 1300px;
+    width: 100%;
+    margin: 0 auto;    
+  }
+  .faq__title{
+    flex-shrink: 0;
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 115%;
+    color:white;
+    font-weight: 400;
+  }
+  .faq__list{
+
+    border-top: 2px solid #C1CCCD;
+    width: 100%;
+  }
+  .faq__item{
+    border-bottom: 2px solid #C1CCCD;
+  }
+  .faq__question{
+    color: #C1CCCD;
+    font-size: 1.75rem;
+    line-height: 125%;
+    padding: 2rem 0rem;
+    outline: none;
+    list-style: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap:24px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .faq__question::-webkit-details-marker{
+    display: none;
+  }
+  details summary::after{
+    background: red;
+    content:'';
+    width: 10px;
+    height: 10px;
+    display: block;
+    right: 0;
+    top:37px;
+    margin-right:18px ;
+    transition: transform 300ms;
+    flex-shrink: 0;
+  }
+  details[open] summary::after{
+    transform: rotate(180deg);
+  }
+  .faq__answer{
+    font-size: 1.125rem;
+    color: #C1CCCD;
+    line-height: 165%;
+    padding-bottom: 2rem;
+  }
+  @media(max-width:1332px){
+    .faq{
+      padding: 0 2rem;
+    }
+  }
+  @media(max-width:809px){
+    .faq{
+      flex-direction: column;
+      gap:36px;
+    }
+    .faq__title{
+      font-size: 1.625rem;
+    }
+    .faq__question{
+      font-size: 1.25rem;
+      padding: 24px 0px;
+    }
+    .faq__answer{
+      font-size: 1rem;
+    }
+  }
+</style>
