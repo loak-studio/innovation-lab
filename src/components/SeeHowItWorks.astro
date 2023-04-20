@@ -1,26 +1,26 @@
 ---
-import Owlion from "../assets/how-it-works/owlion.svg"
-import Skirmysh from "../assets/how-it-works/skirmysh.svg"
-import Oversized from "../assets/how-it-works/oversized.svg"
-import Troople from "../assets/how-it-works/troople.svg"
-import Background from "../assets/backgrounds/grey_background.png"
+import Owlion from "../assets/how-it-works/owlion.svg";
+import Skirmysh from "../assets/how-it-works/skirmysh.svg";
+import Oversized from "../assets/how-it-works/oversized.svg";
+import Troople from "../assets/how-it-works/troople.svg";
+import Background from "../assets/backgrounds/grey_background.png";
 const cards = [
   {
     logo: {
-      file:Owlion,
+      file: Owlion,
       height: 80,
-      width: 118
+      width: 118,
     },
     tag: "Gamification",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.",
-    href: "#",
+    href: "https://be.linkedin.com/company/owlionstudio",
   },
   {
-    logo:  {
-      file:Skirmysh,
+    logo: {
+      file: Skirmysh,
       height: 42,
-      width: 170
+      width: 170,
     },
     tag: "Custome business applications",
     description:
@@ -28,10 +28,10 @@ const cards = [
     href: "#",
   },
   {
-    logo:  {
-      file:Oversized,
+    logo: {
+      file: Oversized,
       height: 22,
-      width: 192
+      width: 192,
     },
     tag: "Communication & Marketing",
     description:
@@ -39,15 +39,15 @@ const cards = [
     href: "#",
   },
   {
-    logo:  {
-      file:Troople,
+    logo: {
+      file: Troople,
       height: 99,
-      width: 133
+      width: 133,
     },
     tag: "Data science",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.",
-    href: "#",
+    href: "https://troople.be/",
   },
 ];
 ---
@@ -56,24 +56,23 @@ const cards = [
   import Swiper from "swiper";
   import "swiper/css";
   const swiper = new Swiper(".how__swiper", {
-
     slidesPerView: 1.4,
-    centeredSlides:true,
-    loop:true,
-    spaceBetween:18,
-    breakpoints:{
-      809:{
-        centeredSlides:true,
-        loop:false,
+    centeredSlides: true,
+    loop: true,
+    spaceBetween: 18,
+    breakpoints: {
+      809: {
+        centeredSlides: true,
+        loop: false,
         slidesPerView: 2.2,
-        initialSlide:2
+        initialSlide: 2,
       },
-      1300:{
-        centeredSlides:false,
-        loop:false,
+      1300: {
+        centeredSlides: false,
+        loop: false,
         slidesPerView: 4,
-      }
-    }
+      },
+    },
   });
 </script>
 
@@ -91,17 +90,25 @@ const cards = [
     <div class="how__swiper-wrapper swiper-wrapper">
       {
         cards.map((card, index) => (
-          <div data-index={index*120} class="swiper-slide how__swiper-slide">
+          <div data-index={index * 120} class="swiper-slide how__swiper-slide">
             <span class="how__tag">{card.tag}</span>
             <div class="how-card">
               <figure class="how-card__figure">
-                <img style={"width:"+ card.logo.width +"px;"} width={card.logo.width} height={card.logo.height} src={card.logo.file} alt="" />
+                <img
+                  style={"width:" + card.logo.width + "px;"}
+                  width={card.logo.width}
+                  height={card.logo.height}
+                  src={card.logo.file}
+                  alt=""
+                />
               </figure>
               <p class="how-card__description">{card.description}</p>
-              <a class="how-card__link" href={card.href}>visit website</a>
+              <a class="how-card__link" href={card.href}>
+                visit website
+              </a>
               <figure class="how-card__background">
-                <img src={Background} alt=""/>
-                </figure>
+                <img src={Background} alt="" />
+              </figure>
             </div>
           </div>
         ))
@@ -132,13 +139,13 @@ const cards = [
     width: 100%;
     margin-top: 100px;
   }
-  .how__swiper-slide:nth-child(even){
-    padding-top: 120px
+  .how__swiper-slide:nth-child(even) {
+    padding-top: 120px;
   }
-  .how__tag{
-    color: #F3260A;
+  .how__tag {
+    color: #f3260a;
     font-size: 1rem;
-    border:1px solid #F3260A;
+    border: 1px solid #f3260a;
     display: block;
     width: fit-content;
     border-radius: 30px;
@@ -147,75 +154,75 @@ const cards = [
     line-height: 1;
     font-weight: 400;
   }
-  .how-card{
+  .how-card {
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 416px;
-    gap:40px;
+    gap: 40px;
     padding: 60px 2rem;
     border-radius: 20px;
     overflow: hidden;
     position: relative;
   }
-  .how-card__figure{
+  .how-card__figure {
     width: 100%;
-    flex : 1 1 0;
+    flex: 1 1 0;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  .how-card__description{
+  .how-card__description {
     font-size: 1.125rem;
     text-align: center;
-    color:white;
+    color: white;
     line-height: 165%;
   }
-  .how-card__link{
+  .how-card__link {
     text-decoration: underline;
-    color:#C1CCCD;
+    color: #c1cccd;
     transition: color 300ms;
   }
-  .how-card__link:hover{
+  .how-card__link:hover {
     color: white;
   }
-  .how-card__link:focus, .how-card__link:active{
+  .how-card__link:focus,
+  .how-card__link:active {
     text-decoration: none;
   }
-  .how-card__background{
+  .how-card__background {
     height: 100%;
     width: 100%;
     z-index: -1;
     position: absolute;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
   }
-  .how-card__background img{
+  .how-card__background img {
     height: 100%;
     width: 100%;
     object-fit: cover;
   }
   @media (max-width: 1332px) {
-    .how__title{
-      padding : 0 2rem;
+    .how__title {
+      padding: 0 2rem;
     }
-    .how__text{
+    .how__text {
       padding: 0 2rem;
     }
   }
   @media (max-width: 809px) {
-    .how-card{
-
-    padding: 40px 36px;
+    .how-card {
+      padding: 40px 36px;
     }
-    .how{
+    .how {
       margin-bottom: 180px;
     }
     .how__header {
       flex-direction: column;
       gap: 40px;
     }
-    .how__swiper-slide{
+    .how__swiper-slide {
       padding-top: 0 !important;
     }
   }
