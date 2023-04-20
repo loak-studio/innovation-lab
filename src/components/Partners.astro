@@ -13,17 +13,21 @@ const partners =  [Actiris, CLL, EIP, Forem, WBI]
 
     slidesPerView: 3.5,
     centeredSlides:true,
+    initialSlide:2,
     loop:true,
     spaceBetween:30,
     breakpoints:{
       809:{
         centeredSlides:false,
-        loop:false,
+        loop:true,
         slidesPerView: 5,
         spaceBetween:124
       }
     }
   });
+  setInterval(()=>{
+    swiper.slideNext()
+  }, 3000)
 </script>
 
 <section class="partners">
