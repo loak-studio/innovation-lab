@@ -91,9 +91,11 @@ const questions = [
     margin-right:18px ;
     transition: transform 300ms;
     flex-shrink: 0;
+
+    transform: rotate(180deg);
   }
   details[open] summary::after{
-    transform: rotate(180deg);
+    transform: rotate(0deg);
   }
   .faq__answer{
     font-size: 1.125rem;
