@@ -22,9 +22,9 @@ const links  = [
     <img src={Logo} alt=""></figure></a>
   <nav>
     <ul class="nav">
-     {links.map(link=><li class="nav__item"><a class:list={[
+     {links.map((link,index)=><li class="nav__item"><a class:list={[
       "nav__link",
-      Astro.url.pathname == link.href ? 'nav__item--active':null
+      index==0 ? 'nav__item--active':null
      ]} href={link.href}>{link.label}</a></li>)}
     </ul>
   </nav>
@@ -46,6 +46,9 @@ const links  = [
   }
   .header__logo{
     max-width: 200px;
+  }
+  .nav__item--active{
+    text-decoration: underline;
   }
   @media(max-width:809px){
     .header{
