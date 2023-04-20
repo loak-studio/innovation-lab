@@ -1,37 +1,146 @@
 ---
-import Background from "../assets/backgrounds/grey_background.png"
+import Background from "../assets/backgrounds/grey_background.png";
+import Logo from "../assets/logo.svg";
+import LinkedIn from "../assets/linkedin.svg"
 ---
+
 <div class="footer">
-  <slot/>
-  <footer>
-    footer
+  <slot />
+  <footer class="footer__footer">
+    <figure class="footer__logo">
+      <img src={Logo} alt="" />
+    </figure>
+    <div class="footer__address">
+      <h3 class="footer__address-title">Contact:</h3>
+      <div class="footer__items">
+        <p class="footer__address-content">
+          Chemin du Cyclotron 6, <br /> 1348 Louvain-la-Neuve, Wallonie, Belgique
+        </p>
+        <div class="footer__numbers">
+          <a href="">+32-486-110-228</a>
+          <a href="">+32-494-224-225</a>
+        </div>
+        <a class="footer__linkedin" href="https://linkedin.com">
+        <figure>
+          <img src={LinkedIn} alt=""></figure></a>
+      </div>
+    </div>
   </footer>
+  <div class="footer__legal">
+    <span>BE 0776.754.521</span>
+    <a href="#">Privacy & Terms</a>
+  </div>
   <figure class="footer__background">
-    <img src={Background} alt="">
+    <img src={Background} alt="" />
   </figure>
 </div>
 
 <style>
-  .footer__background{
+  .footer__background {
     height: 100%;
     width: 100%;
     position: absolute;
-    left:0;
-    top:0;
+    left: 0;
+    top: 0;
     z-index: -1;
   }
-  .footer__background img{
+  .footer__background img {
     height: 100%;
     width: 100%;
     object-fit: cover;
   }
-  .footer{
+  .footer {
     position: relative;
     padding-top: 140px;
   }
-  @media(max-width:809px){
+  .footer__footer {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding-bottom: 140px;
+    display: flex;
+  }
+  .footer__logo {
+    flex: 1 1 0;
+    height: 100%;
+  }
+  .footer__logo img {
+    width: 200px;
+    height: 50px;
+  }
+  .footer__address-title {
+    font-size: 2rem;
+    color: white;
+    font-weight: 400;
+    margin-bottom: 45px;
+    line-height: 1;
+  }
+  .footer__address-content {
+    font-weight: 400;
+    color: white;
+    line-height: 160%;
+  }
+  .footer__numbers{
+    display: flex;
+    flex-direction: column;
+    color:white;
+    justify-content: space-between;
+  }
+  .footer__items{
+    display: flex;
+    gap: 140px;
+  }
+  .footer__linkedin{
+    border-radius: 12px;
+    background: #889193;
+    padding: 12px;
+    width: 48px;
+    height: 48px;
+  }
+  .footer__legal{
+    display: flex;
+    justify-content: space-between;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding-top: 56px;
+    padding-bottom: 140px;
+    border-top: 1px solid white;
+    color: white;
+  }
+  @media(max-width: 1332px){
     .footer{
+      padding-left:  2rem;
+      padding-right: 2rem;
+    }
+  }
+  @media(max-width: 1000px){
+    .footer__footer{
+      flex-direction: column;
+      padding-bottom: 40px;
+    }
+    .footer__address{
+      border-top: 1px solid white;
+      padding-top: 45px;
+      margin-top: 40px;
+
+      position: relative;
+    }
+    .footer__items{
+      flex-direction: column;
+      gap:1rem;
+    }
+    .footer__numbers{flex-direction: row;}
+    .footer__linkedin{
+      position: absolute;
+      right: 0;
+      top:40px;
+    }
+  }
+  @media (max-width: 809px) {
+    .footer {
       padding-top: 100px;
+    }
+    .footer__legal{
+      padding-bottom: 80px;
     }
   }
 </style>

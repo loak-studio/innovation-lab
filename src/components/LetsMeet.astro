@@ -1,3 +1,79 @@
-<div>
-  
-</div>
+---
+import Plane from "../assets/lets-meet/plane.png";
+import Text from "../assets/lets-meet/text.png";
+import Background from "../assets/backgrounds/red_gradient.png"
+---
+
+<a title="Let's meet" class="lets-meet" href="#">
+  <figure class="lets-meet__plane">
+    <img src={Plane} alt="" />
+  </figure>
+  <figure class="lets-meet__text">
+    <img src={Text} alt="" />
+  </figure>
+  <figure class="lets-meet__background">
+    <img src={Background} alt="">
+  </figure>
+</a>
+
+<style>
+  .lets-meet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    height: 180px;
+    width: 180px;
+    border-radius: 100px;
+    background: white;
+  }
+  .lets-meet:hover .lets-meet__background{
+    opacity: 0;
+  }
+  .lets-meet:hover .lets-meet__text{
+    filter: invert(29%) sepia(80%) saturate(7485%) hue-rotate(1deg) brightness(100%) contrast(93%);
+    
+  }
+  .lets-meet:hover .lets-meet__plane{
+    filter: invert(29%) sepia(80%) saturate(7485%) hue-rotate(1deg) brightness(100%) contrast(93%);
+  }
+  .lets-meet__plane {
+    position: absolute;
+    z-index: 1;
+  }
+  .lets-meet__text {
+    position: absolute;
+    animation: rotation 15s infinite linear;
+    z-index: 1;
+    mask-clip: ;
+  }
+  .lets-meet__background{
+    position: absolute;
+    left:0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    transition: opacity 300ms;
+  }
+  .lets-meet__background img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @media(max-width:809px){
+    .lets-meet{
+      height: 108px;
+      width: 108px;
+    }
+  }
+</style>

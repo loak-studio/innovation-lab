@@ -1,25 +1,35 @@
 ---
 import Header from "./Header.astro";
-import Background from "../assets/backgrounds/grey_background.png"
+import Background from "../assets/backgrounds/hero_background.jpg";
+import LetsMeet from "./LetsMeet.astro";
 ---
+
 <div class="hero">
-  <Header/>
+  <Header />
   <div class="hero__content">
-    <h1 class="hero__title">Accelerating human-centered digital transformation.</h1>
-    <p class="hero__text">
-      As a full-service partner to ambitious minds, we bridge the gap between the needs and the solutions.<br/>
-      We guide promising talent towards mature business opportunities to help you reach your full potential in the digital age.
-    </p>
+    <div>
+      <h1 class="hero__title">
+        Accelerating human-centered digital transformation.
+      </h1>
+      <p class="hero__text">
+        As a full-service partner to ambitious minds, we bridge the gap between
+        the needs and the solutions.<br />
+        We guide promising talent towards mature business opportunities to help you
+        reach your full potential in the digital age.
+      </p>
+    </div>
+    <div class="hero__plane">
+      <LetsMeet />
+    </div>
   </div>
   <figure class="hero__background">
-    <img src={Background} alt="">
+    <img src={Background} alt="" />
   </figure>
 </div>
 
 <style>
-  .hero{
+  .hero {
     display: flex;
-    overflow: hidden;
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
@@ -27,55 +37,65 @@ import Background from "../assets/backgrounds/grey_background.png"
     padding-bottom: 100px;
     position: relative;
   }
-  .hero__content{
+  .hero__content {
     max-width: 1300px;
     margin: 0 auto;
     width: 100%;
     border-bottom: 2px solid white;
     padding-bottom: 56px;
+    position: relative;
+    display: flex;
   }
-  .hero__title{
+  .hero__title {
     font-weight: 400;
+    max-width: 1080px;
     font-size: 4.5rem;
     line-height: 113%;
     margin-bottom: 3rem;
     color: white;
   }
-  .hero__text{
+  .hero__text {
     max-width: 952px;
     width: 100%;
     font-size: 1.125rem;
     line-height: 166%;
-    color:white;
+    color: white;
   }
-  .hero__background{
+  .hero__background {
     position: absolute;
     height: 100%;
     width: 100%;
     z-index: -1;
-    left:0;
-    top:0;
+    left: 0;
+    top: 0;
   }
-  .hero__background img{
+  .hero__background img {
     height: 100%;
     width: 100%;
     object-fit: cover;
   }
-  @media (max-width: 1332px){
-    .hero{
+  .hero__plane {
+  }
+  @media (max-width: 1332px) {
+    .hero {
       padding: 0 2rem 100px 2rem;
     }
   }
-  @media(max-width:809px){
-    .hero{
+  @media (max-width: 809px) {
+    .hero {
       min-height: 744px;
       padding-bottom: 64px;
     }
-    .hero__title{
+    .hero__title {
       font-size: 2rem;
     }
-    .hero__text{
+    .hero__text {
       font-size: 1rem;
+    }
+    .hero__plane{
+      position: absolute;
+      bottom: -96px;
+      right: -16px;
     }
   }
 </style>
