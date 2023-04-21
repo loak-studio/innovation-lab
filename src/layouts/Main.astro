@@ -2,8 +2,8 @@
 import "../styles/reset.css";
 import "../styles/fonts.css";
 const title = "Innovation Lab";
-const description = "";
-const image = "";
+const description = "As a full-service partner to ambitious minds, we bridge the gap between the needs and the solutions. We guide promising talent towards mature business opportunities to help you reach your full potential in the digital age.";
+const image = Astro.url.origin + "/share.png";
 ---
 
 <!DOCTYPE html>
@@ -25,6 +25,13 @@ const image = "";
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={image} />
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
   </head>
   <body>
     <slot />
