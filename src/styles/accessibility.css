@@ -1,0 +1,4 @@
+a:focus-visible, summary:focus-visible{
+  outline: 2px dashed #f3260a;
+  outline-offset: 5px;
+}
