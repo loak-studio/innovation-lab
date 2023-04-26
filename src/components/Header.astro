@@ -24,7 +24,6 @@ const links  = [
     <ul class="nav">
      {links.map((link,index)=><li class="nav__item"><a class:list={[
       "nav__link",
-      index==0 ? 'nav__item--active':null
      ]} href={link.href}>{link.label}</a></li>)}
     </ul>
   </nav>
@@ -51,7 +50,7 @@ const links  = [
     font-size: 1.125rem;
     line-height: 165%;
   }
-  .nav__item--active{
+  .nav__item:hover{
     text-decoration: underline;
   }
   @media(max-width:809px){
